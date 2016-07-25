@@ -64,7 +64,7 @@ heroku(){
 	-v $HOME/Dropbox:/root/Dropbox \
 	-e DISPLAY=unix$DISPLAY \
 	--name 1password \
-	f77d78910a4b
+	johnnagro/1password
 }
 
 torproxy(){
@@ -95,7 +95,7 @@ thunderbird(){
     -v /run/user/$(id -u):/run/user/$(id -u) \
     -e DISPLAY=unix$DISPLAY \
     --name thunderbird \
-    7e504d049d77
+    johnnagro/thunderbird
 }
 
 atom(){

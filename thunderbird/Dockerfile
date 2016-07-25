@@ -1,3 +1,5 @@
+# Run thunderbird with torbirdy and enigmail in a container
+
 FROM ubuntu:16.04
 MAINTAINER John Nagro <john.nagro@gmail.com>
 
