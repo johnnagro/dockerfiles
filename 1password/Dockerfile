@@ -12,9 +12,10 @@ MAINTAINER John Nagro <john.nagro@gmail.com>
 
 # install wine
 run dpkg --add-architecture i386
-RUN apt-get clean && apt-get update
+RUN apt-get clean && apt-get update --fix-missing
 RUN apt-get install -y \
-  wine \
+  wine1.6 \
+  wine1.6-i386 \
   --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
