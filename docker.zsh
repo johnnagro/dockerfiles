@@ -49,7 +49,6 @@ heroku(){
     -v /etc/group:/etc/group:ro \
     -v /etc/localtime:/etc/localtime:ro \
     -v /home:/home \
-    -v /tmp:/tmp \
     -v /run/user/$(id -u):/run/user/$(id -u) \
     johnnagro/heroku-toolbelt "$@"
 }
@@ -57,7 +56,8 @@ heroku(){
 1password(){
 	del_stopped 1password
 
-	docker run -it \
+	docker run -it --rm \
+	-v /etc/localtime:/etc/localtime:ro \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
 	-v $HOME/Dropbox:/root/Dropbox \
 	-e DISPLAY=unix$DISPLAY \
@@ -89,7 +89,7 @@ thunderbird(){
     -v /etc/localtime:/etc/localtime:ro \
 		-v /etc/machine-id:/etc/machine-id:ro \
     -v /home:/home \
-    -v /tmp:/tmp \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v /run/user/$(id -u):/run/user/$(id -u) \
     -e DISPLAY=unix$DISPLAY \
     --name thunderbird \
@@ -105,7 +105,7 @@ atom(){
     -v /etc/group:/etc/group:ro \
     -v /etc/localtime:/etc/localtime:ro \
     -v /home:/home \
-    -v /tmp:/tmp \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v /run/user/$(id -u):/run/user/$(id -u) \
     -e DISPLAY=unix$DISPLAY \
     --name atom \
@@ -123,7 +123,7 @@ slack(){
 		-v /etc/machine-id:/etc/machine-id:ro \
     -v /etc/localtime:/etc/localtime:ro \
     -v /home:/home \
-    -v /tmp:/tmp \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v /run/user/$(id -u):/run/user/$(id -u) \
     -e DISPLAY=unix$DISPLAY \
     --name slack \
