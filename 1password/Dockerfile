@@ -29,6 +29,8 @@ RUN apt-get install -y \
   --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
+# for some reason wine-gecko2.21 did not install the 32bit version of the installer
+# https://sourceforge.net/projects/wine/files/
 ADD http://pilotfiber.dl.sourceforge.net/project/wine/Wine%20Gecko/2.21/wine_gecko-2.21-x86.msi /usr/share/wine/gecko/wine_gecko-2.21-x86.msi
 
 ADD https://d13itkw33a7sus.cloudfront.net/dist/1P/win4/1Password-4.6.0.604.exe /usr/src/1Password-4.6.0.604.exe
