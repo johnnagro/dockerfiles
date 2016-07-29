@@ -54,9 +54,9 @@ heroku(){
 }
 
 1password(){
-	del_stopped 1password
+	# del_stopped 1password
 
-	docker run -it --rm \
+	docker run \
 	-v /etc/localtime:/etc/localtime:ro \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
 	-v $HOME/Dropbox:/root/Dropbox \
@@ -97,8 +97,8 @@ thunderbird(){
 }
 
 atom(){
-  del_stopped atom
-  docker run --rm -u $(id -u):$(id -g) -w $HOME \
+  # del_stopped atom
+  docker run -u $(id -u):$(id -g) -w $HOME \
     --device /dev/snd \
     --device /dev/dri \
     -v /etc/passwd:/etc/passwd:ro \
@@ -128,6 +128,24 @@ slack(){
     -e DISPLAY=unix$DISPLAY \
     --name slack \
     58bc7d634701
+}
+
+scudcloud(){
+  # del_stopped scudcloud
+
+  docker run -u $(id -u):$(id -g) -w $HOME \
+    --device /dev/dri \
+		--device /dev/snd \
+    -v /etc/passwd:/etc/passwd:ro \
+    -v /etc/group:/etc/group:ro \
+		-v /etc/machine-id:/etc/machine-id:ro \
+    -v /etc/localtime:/etc/localtime:ro \
+    -v /home:/home \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v /run/user/$(id -u):/run/user/$(id -u) \
+    -e DISPLAY=unix$DISPLAY \
+    --name scudcloud \
+    johnnagro/scudcloud
 }
 
 torbrowser(){
