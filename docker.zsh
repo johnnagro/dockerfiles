@@ -53,6 +53,13 @@ heroku(){
     johnnagro/heroku-toolbelt "$@"
 }
 
+letsencrypt(){
+	docker run -it --rm  \
+	  -v /etc/localtime:/etc/localtime:ro \
+	  -v /home/jnagro/ownCloud/env/letsencrypt:/etc/letsencrypt \
+	  johnnagro/letsencrypt "$@"
+}
+
 1password(){
 	# del_stopped 1password
 
