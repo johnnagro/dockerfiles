@@ -109,7 +109,7 @@ atom(){
     -v /run/user/$(id -u):/run/user/$(id -u) \
     -e DISPLAY=unix$DISPLAY \
     --name atom \
-    a66e856a7a60 "$@"
+    johnnagro/atom "$@"
 }
 
 slack(){

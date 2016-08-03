@@ -8,6 +8,9 @@ RUN apt-get install -y \
   thunderbird \
   xul-ext-torbirdy \
   enigmail \
+  unity-gtk-module-common \
+	libcanberra-gtk-module \
+  xauth \
   --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
