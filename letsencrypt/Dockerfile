@@ -9,6 +9,8 @@ FROM ubuntu:16.04
 MAINTAINER John Nagro <john.nagro@gmail.com>
 
 RUN apt-get clean && apt-get update
-RUN apt-get install -y letsencrypt
+RUN apt-get install -y letsencrypt\
+--no-install-recommends \
+&& rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT [ "letsencrypt" ]
