@@ -12,6 +12,7 @@ RUN apt-get install -y \
 	libgtk2.0-0 \
 	libnotify4 \
 	libxtst6 \
+        libxss1 \
 	libnss3 \
 	python \
 	gvfs-bin \
