@@ -8,9 +8,7 @@ RUN apt-get install -y \
 	git \
 	gconf2 \
 	gconf-service \
-	libudev0 \
 	libudev1 \
-	libgcrypt11 \
 	libgcrypt20 \
 	libnotify4 \
 	libxtst6 \
@@ -18,7 +16,7 @@ RUN apt-get install -y \
 	python \
 	gvfs-bin \
 	xdg-utils \
-	libcap3 \
+	libcap2 \
 	libgnome-keyring0 \
 	gir1.2-gnomekeyring-1.0	\
 	lsb-release
