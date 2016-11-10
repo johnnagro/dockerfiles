@@ -23,7 +23,7 @@ RUN apt-get install -y \
 	--no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV ATOM_VERSION 1.11.1
+ENV ATOM_VERSION 1.12.0
 
 ADD https://github.com/atom/atom/releases/download/v${ATOM_VERSION}/atom-amd64.deb /tmp/atom-amd64.deb
 
