@@ -31,11 +31,11 @@ RUN apt-get install -y \
 	libxkbfile1 \
 	unity-gtk-module-common \
 	dbus-x11 \
-	libcanberra-gtk-module 
-	
+	libcanberra-gtk-module
+
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV ATOM_VERSION 1.12.0
+ENV ATOM_VERSION 1.12.7
 
 ADD https://github.com/atom/atom/releases/download/v${ATOM_VERSION}/atom-amd64.deb /tmp/atom-amd64.deb
 
