@@ -155,14 +155,25 @@ scudcloud(){
     johnnagro/scudcloud
 }
 
-torbrowser(){
-  del_stopped torbrowser
+# torbrowser(){
+#   del_stopped torbrowser
+#
+#   docker run --rm \
+#     --device /dev/snd \
+#     --device /dev/dri \
+#     -v /tmp/.X11-unix:/tmp/.X11-unix \
+#     -e DISPLAY=unix$DISPLAY \
+#     --name torbrowser \
+#     jess/tor-browser
+# }
 
-  docker run --rm \
-    --device /dev/snd \
-    --device /dev/dri \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -e DISPLAY=unix$DISPLAY \
-    --name torbrowser \
-    jess/tor-browser
+torbrowser () {
+	del_stopped torbrowser
+	docker run --rm \
+		--device /dev/snd \
+		--device /dev/dri \
+		-v /tmp/.X11-unix:/tmp/.X11-unix \
+		-e DISPLAY=unix$DISPLAY \
+		--name torbrowser \
+		johnnagro/torbrowser
 }
