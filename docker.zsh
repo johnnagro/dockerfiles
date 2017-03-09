@@ -55,6 +55,19 @@ heroku(){
     johnnagro/heroku-toolbelt "$@"
 }
 
+pt(){
+	docker run -it --rm -u $(id -u):$(id -g) \
+		-v /etc/passwd:/etc/passwd:ro \
+		-v /etc/group:/etc/group:ro \
+		-v /etc/localtime:/etc/localtime:ro \
+		-v /home:/home \
+	  -v "$PWD":"$PWD" \
+	  -w "$PWD" \
+		-e PAPERTRAIL_API_TOKEN=$PAPERTRAIL_API_TOKEN \
+		-v /run/user/$(id -u):/run/user/$(id -u) \
+    johnnagro/papertrail "$@"
+}
+
 letsencrypt(){
 	docker run -it --rm  \
 	  -v /etc/localtime:/etc/localtime:ro \
