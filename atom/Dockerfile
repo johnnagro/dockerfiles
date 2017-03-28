@@ -35,7 +35,7 @@ RUN apt-get install -y \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV ATOM_VERSION 1.50.0
+ENV ATOM_VERSION 1.15.0
 
 ADD https://github.com/atom/atom/releases/download/v${ATOM_VERSION}/atom-amd64.deb /tmp/atom-amd64.deb
 
