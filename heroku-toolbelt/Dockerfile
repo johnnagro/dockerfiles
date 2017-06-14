@@ -25,6 +25,6 @@ RUN apt-get install -y \
   git \
   postgresql-client
 
-RUN wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+RUN wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
 
 ENTRYPOINT [ "heroku" ]
