@@ -98,59 +98,59 @@ torproxy(){
 		jess/tor-proxy
 }
 
-thunderbird(){
-  del_stopped thunderbird
-	relies_on torproxy
+# thunderbird(){
+#   del_stopped thunderbird
+# 	relies_on torproxy
+#
+#   docker run --rm  -u $(id -u):$(id -g) -w $HOME \
+#     --device /dev/snd \
+#     --device /dev/dri \
+# 		--net container:torproxy \
+#     -v /etc/passwd:/etc/passwd:ro \
+#     -v /etc/group:/etc/group:ro \
+#     -v /etc/localtime:/etc/localtime:ro \
+# 		-v /etc/machine-id:/etc/machine-id:ro \
+#     -v /home:/home \
+#     -v /tmp/.X11-unix:/tmp/.X11-unix \
+#     -v /run/user/$(id -u):/run/user/$(id -u) \
+#     -e DISPLAY=unix$DISPLAY \
+#     --name thunderbird \
+#     johnnagro/thunderbird
+# }
 
-  docker run --rm  -u $(id -u):$(id -g) -w $HOME \
-    --device /dev/snd \
-    --device /dev/dri \
-		--net container:torproxy \
-    -v /etc/passwd:/etc/passwd:ro \
-    -v /etc/group:/etc/group:ro \
-    -v /etc/localtime:/etc/localtime:ro \
-		-v /etc/machine-id:/etc/machine-id:ro \
-    -v /home:/home \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v /run/user/$(id -u):/run/user/$(id -u) \
-    -e DISPLAY=unix$DISPLAY \
-    --name thunderbird \
-    johnnagro/thunderbird
-}
+# atom(){
+#   # del_stopped atom
+#   docker run -u $(id -u):$(id -g) -w $HOME \
+#     --device /dev/snd \
+#     --device /dev/dri \
+#     -v /etc/passwd:/etc/passwd:ro \
+#     -v /etc/group:/etc/group:ro \
+#     -v /etc/localtime:/etc/localtime:ro \
+#     -v /home:/home \
+#     -v /tmp/.X11-unix:/tmp/.X11-unix \
+#     -v /run/user/$(id -u):/run/user/$(id -u) \
+#     -e DISPLAY=unix$DISPLAY \
+#     --name atom \
+#     johnnagro/atom "$@"
+# }
 
-atom(){
-  # del_stopped atom
-  docker run -u $(id -u):$(id -g) -w $HOME \
-    --device /dev/snd \
-    --device /dev/dri \
-    -v /etc/passwd:/etc/passwd:ro \
-    -v /etc/group:/etc/group:ro \
-    -v /etc/localtime:/etc/localtime:ro \
-    -v /home:/home \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v /run/user/$(id -u):/run/user/$(id -u) \
-    -e DISPLAY=unix$DISPLAY \
-    --name atom \
-    johnnagro/atom "$@"
-}
-
-slack(){
-  del_stopped slack
-
-  docker run --rm  -u $(id -u):$(id -g) -w $HOME \
-    --device /dev/dri \
-		--device /dev/snd \
-    -v /etc/passwd:/etc/passwd:ro \
-    -v /etc/group:/etc/group:ro \
-		-v /etc/machine-id:/etc/machine-id:ro \
-    -v /etc/localtime:/etc/localtime:ro \
-    -v /home:/home \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v /run/user/$(id -u):/run/user/$(id -u) \
-    -e DISPLAY=unix$DISPLAY \
-    --name slack \
-    58bc7d634701
-}
+# slack(){
+#   del_stopped slack
+#
+#   docker run --rm  -u $(id -u):$(id -g) -w $HOME \
+#     --device /dev/dri \
+# 		--device /dev/snd \
+#     -v /etc/passwd:/etc/passwd:ro \
+#     -v /etc/group:/etc/group:ro \
+# 		-v /etc/machine-id:/etc/machine-id:ro \
+#     -v /etc/localtime:/etc/localtime:ro \
+#     -v /home:/home \
+#     -v /tmp/.X11-unix:/tmp/.X11-unix \
+#     -v /run/user/$(id -u):/run/user/$(id -u) \
+#     -e DISPLAY=unix$DISPLAY \
+#     --name slack \
+#     58bc7d634701
+# }
 
 scudcloud(){
   # del_stopped scudcloud
@@ -182,13 +182,13 @@ scudcloud(){
 #     jess/tor-browser
 # }
 
-torbrowser () {
-	del_stopped torbrowser
-	docker run --rm \
-		--device /dev/snd \
-		--device /dev/dri \
-		-v /tmp/.X11-unix:/tmp/.X11-unix \
-		-e DISPLAY=unix$DISPLAY \
-		--name torbrowser \
-		johnnagro/torbrowser
-}
+# torbrowser () {
+# 	del_stopped torbrowser
+# 	docker run --rm \
+# 		--device /dev/snd \
+# 		--device /dev/dri \
+# 		-v /tmp/.X11-unix:/tmp/.X11-unix \
+# 		-e DISPLAY=unix$DISPLAY \
+# 		--name torbrowser \
+# 		johnnagro/torbrowser
+# }
