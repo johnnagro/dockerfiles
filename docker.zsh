@@ -35,12 +35,12 @@ vpn(){
 	docker run -it \
 	  --cap-add=NET_ADMIN \
 	  --device /dev/net/tun \
-	  --dns 8.8.8.8 \
-	  --dns 8.8.4.4 \
+	  --dns 1.1.1.1 \
+	  --dns 1.0.0.1 \
 	  -v $HOME/ownCloud/docker_data/vpn:/vpn \
 	  --restart=always \
 	  --name vpn \
-	  -d dperson/openvpn-client -d -f
+	  -d dperson/openvpn-client -d -f ''
 }
 
 heroku(){
