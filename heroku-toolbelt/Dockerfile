@@ -23,7 +23,8 @@ RUN apt-get install -y \
   openssh-client \
   ruby \
   git \
-  postgresql-client
+  postgresql-client \
+  curl
 
 ADD https://cli-assets.heroku.com/install-ubuntu.sh /opt/install-ubuntu.sh
 RUN sh /opt/install-ubuntu.sh
